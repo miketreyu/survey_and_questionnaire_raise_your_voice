@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        .survey-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="links">
+        <h1>WHAT DO YOU NEED ASSISTANCE WITH?</h1>
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('domestic-violence')">Domestic Violence</a>
+                <p>Violence committed by someone in the victim's domestic circle</p>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('sexual-violence')">Sexual Violence</a>
+                <p>Any kind of sexual activity or act that was unwanted or happened without consent</p>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('divorce')">Divorce</a>
+                <p>To legally dissolve one's marriage</p>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('child-maintenance')">Child Maintenance</a>
+                <p>A payment made (usually by a parent) to the other parent for outgoings relating to a child or children</p>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="domestic-violence" class="survey-section">
+        <div id="domestic-violence-form">
+            <h2>Domestic Violence Survey</h2>
+            <form onsubmit="showQuestionnaire('domestic-violence'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="domestic-violence-questionnaire" style="display:none;">
+            <h2>Domestic Violence Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <p>Are you currently experiencing any form of abuse?</p>
+                <label><input type="radio" name="question" value="yes" required> Yes</label>
+                <label><input type="radio" name="question" value="no"> No</label><br><br>
+                
+                <!-- More questions here -->
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <!-- Repeat similar structure for other sections -->
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.survey-section').forEach(function(section) {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showQuestionnaire(sectionId) {
+            document.getElementById(sectionId + '-form').style.display = 'none';
+            document.getElementById(sectionId + '-questionnaire').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
