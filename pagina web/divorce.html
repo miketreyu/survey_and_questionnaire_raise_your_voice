@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divorce Survey</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div id="divorce-form" class="survey-section">
+        <h2>Divorce Survey</h2>
+        <form onsubmit="showQuestionnaire(event, 'divorce-questionnaire'); return false;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="divorce-questionnaire" class="questionnaire-section" style="display:none;">
+        <h2>Divorce Questionnaire</h2>
+        <form action="/submit_questionnaire" method="post">
+            <p>Are you considering filing for divorce?</p>
+            <label><input type="radio" name="question" value="yes" required> Yes</label>
+            <label><input type="radio" name="question" value="no"> No</label><br><br>
+            
+            <p>If yes, please describe your situation briefly:</p>
+            <textarea name="details" rows="4" cols="50"></textarea><br><br>
+            
+            <p>Have you consulted with a lawyer?</p>
+            <label><input type="radio" name="consulted" value="yes" required> Yes</label>
+            <label><input type="radio" name="consulted" value="no"> No</label><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+    </div>
+</body>
+</html>
