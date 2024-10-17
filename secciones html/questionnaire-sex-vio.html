@@ -1,0 +1,18 @@
+<div id="sexual-violence-questionnaire" style="display:none;">
+    <h2>Sexual Violence Questionnaire</h2>
+    <form action="/submit_questionnaire" method="post">
+        <p>Are you currently experiencing any form of sexual violence?</p>
+        <label><input type="radio" name="question" value="yes" required> Yes</label>
+        <label><input type="radio" name="question" value="no"> No</label><br><br>
+        
+        <p>If yes, please provide details:</p>
+        <textarea name="details" rows="4" cols="50"></textarea><br><br>
+        
+        <p>Have you reported this to the authorities?</p>
+        <label><input type="radio" name="reported" value="yes" required> Yes</label>
+        <label><input type="radio" name="reported" value="no"> No</label><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</div>

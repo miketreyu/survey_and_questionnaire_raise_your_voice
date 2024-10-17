@@ -1,0 +1,17 @@
+<div id="child-maintenance-questionnaire" style="display:none;">
+    <h2>Child Maintenance Questionnaire</h2>
+    <form action="/submit_questionnaire" method="post">
+        <p>Are you seeking child maintenance from a parent?</p>
+        <label><input type="radio" name="question" value="yes" required> Yes</label>
+        <label><input type="radio" name="question" value="no"> No</label><br><br>
+        
+        <p>If yes, please describe the situation briefly:</p>
+        <textarea name="details" rows="4" cols="50"></textarea><br><br>
+        
+        <p>Have you contacted a lawyer or legal service regarding this matter?</p>
+        <label><input type="radio" name="contacted" value="yes" required> Yes</label>
+        <label><input type="radio" name="contacted" value="no"> No</label><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>

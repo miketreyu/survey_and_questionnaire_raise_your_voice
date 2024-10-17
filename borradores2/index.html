@@ -1,0 +1,97 @@
+<div id="links">
+    <!-- Botones para las secciones -->
+    <button onclick="showSection('domestic-violence')">Domestic Violence</button>
+    <button onclick="showSection('sexual-violence')">Sexual Violence</button>
+    <button onclick="showSection('divorce')">Divorce</button>
+    <button onclick="showSection('child-maintenance')">Child Maintenance</button>
+</div>
+
+<div id="domestic-violence" class="survey-section" style="display:none;">
+    <div id="domestic-violence-form">
+        <h2>Domestic Violence Survey</h2>
+        <form onsubmit="showDomesticViolenceQuestionnaire(event);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="domestic-violence-questionnaire" style="display:none;">
+        <h2>Domestic Violence Questionnaire</h2>
+        <form action="/submit_questionnaire" method="post">
+            <!-- Aquí va todo el contenido del cuestionario -->
+            <!-- ... -->
+        </form>
+    </div>
+</div>
+
+<!-- Repite la estructura para otras secciones -->
+
+<div id="sexual-violence" class="survey-section" style="display:none;">
+    <div id="sexual-violence-form">
+        <h2>Sexual Violence Survey</h2>
+        <form onsubmit="showSexualViolenceQuestionnaire(event);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <!-- Resto del formulario -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="sexual-violence-questionnaire" style="display:none;">
+        <h2>Sexual Violence Questionnaire</h2>
+        <form action="/submit_questionnaire" method="post">
+            <!-- Aquí va todo el contenido del cuestionario -->
+            <!-- ... -->
+        </form>
+    </div>
+</div>
+
+<div id="divorce" class="survey-section" style="display:none;">
+    <div id="divorce-form">
+        <h2>Divorce Survey</h2>
+        <form onsubmit="showDivorceQuestionnaire(event);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <!-- Resto del formulario -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="divorce-questionnaire" style="display:none;">
+        <h2>Divorce Questionnaire</h2>
+        <form action="/submit_questionnaire" method="post">
+            <!-- Aquí va todo el contenido del cuestionario -->
+            <!-- ... -->
+        </form>
+    </div>
+</div>
+
+<div id="child-maintenance" class="survey-section" style="display:none;">
+    <div id="child-maintenance-form">
+        <h2>Child Maintenance Survey</h2>
+        <form onsubmit="showChildMaintenanceQuestionnaire(event);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <!-- Resto del formulario -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="child-maintenance-questionnaire" style="display:none;">
+        <h2>Child Maintenance Questionnaire</h2>
+        <form action="/submit_questionnaire" method="post">
+            <!-- Aquí va todo el contenido del cuestionario -->
+            <!-- ... -->
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div id="links">
+        <h1>WHAT DO YOU NEED ASSISTANCE WITH?</h1>
+        <ul>
+            <li><a href="#" onclick="showSection('domestic-violence')">Domestic Violence</a></li>
+            <li><a href="#" onclick="showSection('sexual-violence')">Sexual Violence</a></li>
+            <li><a href="#" onclick="showSection('divorce')">Divorce</a></li>
+            <li><a href="#" onclick="showSection('child-maintenance')">Child Maintenance</a></li>
+        </ul>
+    </div>
+
+    <div id="domestic-violence" class="survey-section" style="display:none;">
+        <div class="survey-form">
+            <h2>Domestic Violence Survey</h2>
+            <form id="domestic-violence-form" onsubmit="showQuestionnaire(event, 'domestic-violence-questionnaire');">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <!-- Other form fields -->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="domestic-violence-questionnaire" class="questionnaire" style="display:none;">
+            <h2>Domestic Violence Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <!-- Questionnaire fields -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Repeat similar structure for other survey sections -->
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div id="links">
+        <h1>WHAT DO YOU NEED ASSISTANCE WITH?</h1>
+        <ul>
+            <li><a href="#" onclick="showSection('domestic-violence')">Domestic Violence</a></li>
+            <p>Violence committed by someone in the victim's domestic circle</p>
+            <li><a href="#" onclick="showSection('sexual-violence')">Sexual Violence</a></li>
+            <p>Any kind of sexual activity or act that was unwanted or happened without consent</p>
+            <li><a href="#" onclick="showSection('divorce')">Divorce</a></li>
+            <p>To legally dissolve one's marriage</p>
+            <li><a href="#" onclick="showSection('child-maintenance')">Child Maintenance</a></li>
+            <p>A payment made (usually by a parent) to the other parent for outgoings relating to a child or children</p>
+        </ul>
+    </div>
+    
+    <div id="domestic-violence" class="survey-section">
+        <div id="domestic-violence-form">
+            <h2>Domestic Violence Survey</h2>
+            <form onsubmit="showQuestionnaire(event, 'domestic-violence-questionnaire'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="domestic-violence-questionnaire" style="display:none;">
+            <h2>Domestic Violence Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <p>Are you currently experiencing any form of abuse?</p>
+                <label><input type="radio" name="question" value="yes" required> Yes</label>
+                <label><input type="radio" name="question" value="no"> No</label><br><br>
+                <p>As defined by the St Lucian Domestic Violence Act, this includes: </p>
+                <h3> Physical - This is any violence or intentional and unwanted contact with your body.</h3>
+                <p> Some examples of physical abuse are:</p>
+                <p> Hitting, slapping, kicking, punching, choking, scratching, biting, pushing or strangling you </p>
+                <P> Using a weapon against you </P>
+                <P> Throwing something at you such as a phone, book, shoe, plate, etc. </P>
+                <P> Pulling your hair</P>
+                <P> Grabbing your clothing</P>
+                <P> Grabbing you to prevent you from leaving or to force you to go somewhere</P>
+
+                <h3> Emotional - This includes threats, insults, humiliation, intimidation, isolation or stalking.</h3>
+                <p> Some examples of emotional abuse are:</p>
+                <p> Calling you names and putting you down </p>
+                <P> Yelling and screaming at you </P>
+                <P> Intentionally embarrassing you in public </P>
+                <P> Preventing you from seeing or talking with friends and family</P>
+                <P> Telling you what to do and wear</P>
+                <P> Damaging your property when they are angry (throwing objects, punching walls, kicking doors, etc.)</P>
+                <p> Blaming your actions for their abusive or unhealthy behaviour</p>
+                <p> Threatening to commit suicide to keep you from breaking up with them</p>
+                <p> Threatening to harm you, your pet or people you care about</p>
+                <p> Making you feel guilty or immature when you do not consent to sexual activity</p>
+                <p> Threatening to have your children taken away</p>
+
+                <h3> Psychological - A person subjecting another person to behaviour which may result in psychological trauma including anxiety, chronic depression or post-traumatic stress disorder.</h3>
+                <p>Some examples of psychological abuse are:</p>
+                <p>Gaslighting: manipulating you into doubting your sanity or reality</p>
+                <p>Moving things around the house, removing and returning them later, and then denying it</p>
+                <p>Denying that you or they said things</p>
+                <p>Telling you that people have said things about you, or that your friends do not like you</p>
+                <p>Telling you that you have a mental health condition when you don't</p>
+                <p>Making derogatory jokes about you to others in front of you</p>
+                <p>Name-calling, telling you that you are useless, stupid, worthless and mad</p>
+                <p>Questions you about everything you do or say</p>
+
+                <h3>Financial - This includes telling you what you can and cannot buy or requiring you to share control of your bank accounts.</h3>
+                <p>Some examples of financial abuse are:</p>
+                <p>Giving you an allowance and closely watching what you buy</p>
+                <p>Placing your wages in their account and denying you access to it</p>
+                <p>Keeping you from seeing shared bank accounts or records</p>
+                <p>Forbidding you to work or limiting the hours you do</p>
+                <p>Preventing you from going to work i.e. by taking your car or keys</p>
+                <p>Getting you fired by harassing you, your employer or coworkers on the job</p>
+                <p>Maxing out your credit cards without your permission</p>
+                <p>Refusing to give you money for food, rent, medicine or clothing</p>
+                <p>Spending money on themselves but not allowing you to do the same</p>
+
+                <h3>Digital - This is the use of technologies such as texting and social networking to bully, harass, stalk or intimidate a partner. Often this behaviour is a form of verbal or emotional abuse perpetrated online.</h3>
+                <p>Some examples of digital abuse are when someone:</p>
+                <p>Tells you who you can or cannot be friends with on social media</p>
+                <p>Sends you negative, insulting or threatening emails, Facebook messages, Tweets, direct messages or other online messages</p>
+                <p>Uses sites like Facebook, Twitter, Instagram and others to keep constant tabs on you</p>
+                <p>Posts negative things about you</p>
+                <p>Sends you unwanted, explicit pictures and/or demands you send some in return</p>
+                <p>Pressures you to send explicit videos or sexts</p>
+                <p>Steals or insists to be given your passwords</p>
+                <p>Constantly texts you and makes you feel like you can not be separated from your phone for fear that you will be punished</p>
+                <p>Looks through your phone frequently and checks your pictures, texts and outgoing calls</p>
+                <p>Tags you unkindly in pictures on Instagram, Facebook, Twitter, etc.</p>
+
+                <h3>Harassment/Stalking - This is repeated unwanted behaviour that causes fear, distress or annoyance.</h3>
+                <p>Some examples of harassment are:</p>
+                <p>Excessive phone calls</p>
+                <p>Sending threatening messages</p>
+                <p>Engaging in online harassment</p>
+
+                <h3>Damage to Property - This is intentionally damaging or destroying the property of a household member, which can be a form of control or intimidation.</h3>
+
+                <h3>If you have experienced any form of the abuse mentioned above or others, please answer the following questions.</h3>
+
+                <p>1. Are you in immediate danger or fear for your safety? </p>
+                <label><input type="radio" name="question1" value="yes" required> Yes</label>
+                <label><input type="radio" name="question1" value="no"> No</label><br><br>
+                <p> Police: 999<br>
+                    Ambulance: 911<br>
+                    Raise your Voice: +1 758-487-2329 (We can provide safe-houses) <br>
+                    Please contact these services if you feel you are in immediate danger. </p>
+                
+                <p>3. Have you ever sought help from a support service?</p>
+                <label><input type="radio" name="question3" value="yes" required> Yes</label>
+                <label><input type="radio" name="question3" value="no"> No</label><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div id="sexual-violence" class="survey-section">
+        <div id="sexual-violence-form">
+            <h2>Sexual Violence Survey</h2>
+            <form onsubmit="showQuestionnaire(event, 'sexual-violence-questionnaire'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="sexual-violence-questionnaire" style="display:none;">
+            <h2>Sexual Violence Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <p>1. Have you ever experienced physical violence?</p>
+                <label><input type="radio" name="question1" value="yes" required> Yes</label>
+                <label><input type="radio" name="question1" value="no"> No</label><br><br>
+                
+                <p>2. Have you ever experienced emotional abuse?</p>
+                <label><input type="radio" name="question2" value="yes" required> Yes</label>
+                <label><input type="radio" name="question2" value="no"> No</label><br><br>
+                
+                <p>3. Have you ever sought help from a support service?</p>
+                <label><input type="radio" name="question3" value="yes" required> Yes</label>
+                <label><input type="radio" name="question3" value="no"> No</label><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div id="divorce" class="survey-section">
+        <div id="divorce-form">
+            <h2>Divorce Survey</h2>
+            <form onsubmit="showQuestionnaire(event, 'divorce-questionnaire'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="divorce-questionnaire" style="display:none;">
+            <h2>Divorce Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <p>1. Have you ever experienced physical violence?</p>
+                <label><input type="radio" name="question1" value="yes" required> Yes</label>
+                <label><input type="radio" name="question1" value="no"> No</label><br><br>
+                
+                <p>2. Have you ever experienced emotional abuse?</p>
+                <label><input type="radio" name="question2" value="yes" required> Yes</label>
+                <label><input type="radio" name="question2" value="no"> No</label><br><br>
+                
+                <p>3. Have you ever sought help from a support service?</p>
+                <label><input type="radio" name="question3" value="yes" required> Yes</label>
+                <label><input type="radio" name="question3" value="no"> No</label><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div id="child-maintenance" class="survey-section">
+        <div id="child-maintenance-form">
+            <h2>Child Maintenance Survey</h2>
+            <form onsubmit="showQuestionnaire(event, 'child-maintenance-questionnaire'); return false;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="child-maintenance-questionnaire" style="display:none;">
+            <h2>Child Maintenance Questionnaire</h2>
+            <form action="/submit_questionnaire" method="post">
+                <p>1. Has a maintenance order/provisional maintenance order been made for your child/children?</p>
+                <label><input type="radio" name="question1" value="yes" required> Yes</label>
+                <label><input type="radio" name="question1" value="no"> No</label><br><br>
+                
+                <p>2. Where was the order made?</p>
+                <label><input type="radio" name="question2" value="yes" required> Yes</label>
+                <label><input type="radio" name="question2" value="no"> No</label><br><br>
+                
+                <p>3. If the order was made in England or Ireland, has it been registered at a court in Saint Lucia?</p>
+                <label><input type="radio" name="question3" value="yes" required> Yes</label>
+                <label><input type="radio" name="question3" value="no"> No</label><br><br>
+                
+                <p>4. If you are looking for a maintenance order/provisional maintenance order to be made, does the person whom the order will be made against have any reason to object?</p>
+                <label><input type="radio" name="question4" value="yes" required> Yes</label>
+                <label><input type="radio" name="question4" value="no"> No</label><br><br>
+                
+                <p>5. Have you already sought legal advice?</p>
+                <label><input type="radio" name="question5" value="yes" required> Yes</label>
+                <label><input type="radio" name="question5" value="no"> No</label><br><br>
+                
+                <p>6. Do you have another legal matter?</p>
+                <label><input type="radio" name="question6" value="yes" required> Yes</label>
+                <label><input type="radio" name="question6" value="no"> No</label><br><br>
+
+                <p>7. What do you need assistance with?</p>
+                <label><input type="radio" name="question7" value="yes" required> Yes</label>
+                <label><input type="radio" name="question7" value="no"> No</label><br><br>
+
+                <p>Terms and Conditions</p>
+                <label><input type="radio" name="terms" value="yes" required> I agree to the terms and conditions</label>
+
+                <p>Contact Permission</p>
+                <label><input type="radio" name="contact-permission" value="yes" required> Yes please, I'd like to hear about weekly digest of content posted to this website and blog. </label>
+                <label><input type="radio" name="contact-permission" value="no"> No thanks, I don't want to hear about weekly digest of content posted to this website and blog. </label><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
